@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>json</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    // var json = {
+    //     "status": "ok",
+    //     "totalResults": 20,
+    //     "articles": [{"source": {
+    //             "id": "the-washington-post",
+    //             "name": "The Washington Post"
+    //         },
+    //         "author": "https://www.facebook.com/ishaantharoor",
+    //         "title": "In Davos, everyone is worried about the 'forgotten' people",
+    //         "description": "There's lots of talk about the have-nots, but are there any solutions for their problems?",
+    //         "url": "https://www.washingtonpost.com/news/worldviews/wp/2018/01/24/in-davos-everyone-is-worried-about-the-forgotten-people/",
+    //         "urlToImage": "https://www.washingtonpost.com/pbox.php?url=http://www.washingtonpost.com/blogs/worldviews/files/2018/01/0123_Foreign.jpg&w=1484&op=resize&opt=1&filter=antialias&t=20170517",
+    //         "publishedAt": "2018-01-24T06:07:18Z"
+    //     }, {"source": {
+    //             "id": null,
+    //             "name": "Usnews.com"
+    //         },
+    //         "author": null,
+    //         "title": "Philippine Volcano Spreads Lava Almost 2 Miles From Crater",
+    //         "description": null,
+    //         "url": "https://www.usnews.com/news/world/articles/2018-01-24/philippine-volcano-spreads-lava-almost-2-miles-from-crater",
+    //         "urlToImage": null,
+    //         "publishedAt": "2018-01-24T06:05:51Z"
+    //     }, {"source": {
+    //             "id": null,
+    //             "name": "Bbc.com"
+    //         },
+    //         "author": "https://www.facebook.com/bbcnews",
+    //         "title": "Save the Children office in Afghanistan hit by attack",
+    //         "description": "At least 11 are injured by an explosion outside the charity's Jalalabad office, authorities say.",
+    //         "url": "http://www.bbc.com/news/world-asia-42800271",
+    //         "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/14103/production/_88797128_75f3afbc-65fc-49d0-af64-a7c3f0b01361.jpg",
+    //         "publishedAt": "2018-01-24T05:46:23Z"
+    //     }, {"source": {
+    //             "id": "the-guardian-au",
+    //             "name": "The Guardian (AU)"
+    //         },
+    //         "author": "",
+    //         "title": "Twin car bombs kill dozens outside mosque in Benghazi",
+    //         "description": "Second bomb goes off as residents and medics gather to evacuate wounded after first explosion",
+    //         "url": "https://www.theguardian.com/world/2018/jan/24/twin-car-bombs-kill-dozens-outside-mosque-in-benghazi",
+    //         "urlToImage": "https://i.guim.co.uk/img/media/401edbae798db2710fffa67714addce48b598d8b/0_109_3000_1801/master/3000.jpg?w=1200&h=630&q=55&auto=format&usm=12&fit=crop&crop=faces%2Centropy&bm=normal&ba=bottom%2Cleft&blend64=aHR0cHM6Ly91cGxvYWRzLmd1aW0uY28udWsvMjAxOC8wMS8xOC9mYWNlYm9va19kZWZhdWx0LnBuZw&s=87640847acd82287d063088194050700",
+    //         "publishedAt": "2018-01-24T05:02:00Z"
+    //     }, {"source": {
+    //             "id": "the-new-york-times",
+    //             "name": "The New York Times"
+    //         },
+    //         "author": "Maggie Haberman and Adam Goldman",
+    //         "title": "In Looking for Loyalty, Trump Asked FBI Official How He Voted",
+    //         "description": "The question came as Mr. Trump openly discussed the need for James B. Comey’s successor to be “loyal,” according to an adviser to the president.",
+    //         "url": "https://www.nytimes.com/2018/01/23/us/politics/trump-fbi-mccabe.html",
+    //         "urlToImage": "https://static01.nyt.com/images/2018/01/24/us/politics/24dc-mccabe-1/24dc-mccabe-1-facebookJumbo.jpg",
+    //         "publishedAt": "2018-01-24T04:22:20Z"
+    //     }, {"source": {
+    //             "id": "the-new-york-times",
+    //             "name": "The New York Times"
+    //         },
+    //         "author": "Mark Landler, Carlotta Gall and Eric Schmitt",
+    //         "title": "Mixed Messages From US as Turkey Attacks Syrian Kurds",
+    //         "description": "To mollify Turkey, the White House said it was easing off its support for the Syrian Kurds, while the Pentagon said they were a critical partner in the war against the Islamic State.",
+    //         "url": "https://www.nytimes.com/2018/01/23/world/middleeast/us-nato-turkey-afrin-manbij.html",
+    //         "urlToImage": "https://static01.nyt.com/images/2018/01/24/world/middleeast/24turkey1/24turkey1-facebookJumbo.jpg",
+    //         "publishedAt": "2018-01-24T02:22:10Z"
+    //     }, {"source": {
+    //             "id": "the-new-york-times",
+    //             "name": "The New York Times"
+    //         },
+    //         "author": "Kenneth P. Vogel and Katie Rogers",
+    //         "title": "Under Fire for Harassment, Congressman Says Aide 'Invited' Behavior",
+    //         "description": "Representative Patrick Meehan denied any impropriety, and said that he was emotionally wounded when a former aide filed a complaint against him.",
+    //         "url": "https://www.nytimes.com/2018/01/23/us/politics/patrick-meehan-sexual-misconduct-complaint.html",
+    //         "urlToImage": "https://static01.nyt.com/images/2018/01/24/us/politics/24dc-meehan/24dc-meehan--facebookJumbo.jpg",
+    //         "publishedAt": "2018-01-24T01:53:48Z"
+    //     }, {"source": {
+    //             "id": "the-washington-post",
+    //             "name": "The Washington Post"
+    //         },
+    //         "author": null,
+    //         "title": "Latest: Seismologist: Tsunami chance reduced with quake type",
+    //         "description": "The Latest on an Alaska earthquake that prompted a tsunami warning for coastal Alaska, Canada’s British Columbia and the West Coast of the U.S. (all times local):",
+    //         "url": "https://www.washingtonpost.com/national/health-science/latest-seismologist-tsunami-chance-reduced-with-quake-type/2018/01/23/2803b294-00a8-11e8-86b9-8908743c79dd_story.html",
+    //         "urlToImage": "https://www.washingtonpost.com/rf/image_1484w/2010-2019/Wires/Online/2018-01-24/AP/Images/Alaska_Earthquake_26903.jpg-6ce1b.jpg?t=20170517",
+    //         "publishedAt": "2018-01-24T01:47:08Z"
+    //     }, {"source": {
+    //             "id": "cnn",
+    //             "name": "CNN"
+    //         },
+    //         "author": "Holly Yan, AnneClaire Stapleton and Paul P. Murphy, CNN",
+    //         "title": "Kentucky school shooting: 2 students killed, 17 injured",
+    //         "description": "Fifteen people were shot, two of them fatally, in a Tuesday morning shooting at Marshall County High School in western Kentucky, Gov. Matt Bevin said at a news conference.",
+    //         "url": "https://www.cnn.com/2018/01/23/us/kentucky-high-school-shooting/index.html",
+    //         "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/180123094402-marshall-ky-school-file-super-tease.jpg",
+    //         "publishedAt": "2018-01-24T01:18:48Z"
+    //     }, {"source": {
+    //             "id": "the-washington-post",
+    //             "name": "The Washington Post"
+    //         },
+    //         "author": null,
+    //         "title": "New chemical attacks reported in Syria, and Trump administration blames Russia",
+    //         "description": "“Whoever conducted the attacks, Russia ultimately bears responsibility,” Secretary of State Rex Tillerson said in Paris.",
+    //         "url": "https://www.washingtonpost.com/world/new-chemical-attacks-reported-in-syria-and-trump-administration-blames-russia/2018/01/23/52167730-005b-11e8-86b9-8908743c79dd_story.html",
+    //         "urlToImage": "https://www.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2018/01/23/Foreign/Images/France_Tillerson_21138-38354.jpg?t=20170517",
+    //         "publishedAt": "2018-01-23T23:55:49Z"
+    //     }, {"source": {
+    //             "id": "time",
+    //             "name": "Time"
+    //         },
+    //         "author": "Gillian Flaccus, Hillel Italie / AP",
+    //         "title": "Acclaimed Feminist Science Fiction Writer Ursula K. Le Guin Dies at 88",
+    //         "description": "",
+    //         "url": "http://time.com/5115706/ursula-le-guin-dead/",
+    //         "urlToImage": "https://timedotcom.files.wordpress.com/2018/01/ursula-le-guin-dead.jpg?quality=85",
+    //         "publishedAt": "2018-01-23T23:52:04Z"
+    //     }, {"source": {
+    //             "id": "the-new-york-times",
+    //             "name": "The New York Times"
+    //         },
+    //         "author": "Binyamin Appelbaum",
+    //         "title": "Senate Confirms Jerome H. Powell as Fed Chairman",
+    //         "description": "Mr. Powell was confirmed by a vote of 85 to 12 to become the next Fed chair. Another Fed nominee, Marvin Goodfriend, faced sharp questions from Senate Democrats.",
+    //         "url": "https://www.nytimes.com/2018/01/23/us/politics/fed-nominee-is-asked-why-he-erred-in-forecasting-inflation-he-didnt-answer.html",
+    //         "urlToImage": "https://static01.nyt.com/images/2018/01/24/business/24dc-fed1/merlin_132772988_4a7fc8ce-e244-42ad-901f-e696780e3f9c-facebookJumbo.jpg",
+    //         "publishedAt": "2018-01-23T23:49:17Z"
+    //     }, , {"source": {
+    //             "id": null,
+    //             "name": "Defense.gov"
+    //         },
+    //         "author": null,
+    //         "title": "Coalition Precision Strikes Kill Scores of ISIS Terrorists in Syria",
+    //         "description": "Precision strikes killed an estimated 145-150 Islamic State of Iraq and Syria terrorists near Shafah, Syria, Combined Joint Task Force Operation Inherent Resolve officials reported.",
+    //         "url": "https://www.defense.gov/News/Article/Article/1421728/coalition-precision-strikes-kill-scores-of-isis-terrorists-in-syria/",
+    //         "urlToImage": "https://media.defense.gov/2017/Oct/12/2001826306/400/400/0/171012-D-MA852-001.JPG",
+    //         "publishedAt": "2018-01-23T20:01:12Z"
+    //     }]
+    // }
+    </script>
+</head>
+
+<body>
+    <div class="mel"></div>
+    <button class="cli">click</button>
+    <div id="sample"></div>
+</body>
+<script>
+$(function() {
+
+    $('.cli').click(function() {
+    	var json;
+ 
+ 	       $.ajax({
+            url: 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=1232e6dfae6b4f30a92433d5735dd276',
+            type: 'get',
+            data: 'data',
+            success: function(data) {
+            	// alert(data.articles[9].author);
+            	for(i=0;i<data.articles.length;i++){
+
+            		$(".mel").append('<h1>' + data.articles[i].author + '</h1>');
+            		alert(data.articles[i].author);
+            	}
+            }
+
+        });
+        alert(json.articles[9].author);
+    });
+});
+</script>
+
+</html>
